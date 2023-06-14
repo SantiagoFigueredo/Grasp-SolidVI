@@ -62,5 +62,18 @@ namespace Full_GRASP_And_SOLID
 
             return result;
         }
+
+        // Agregado por el desafío
+        public int GetCookTime()
+        {
+            int cookTime = 0;
+
+            foreach (BaseStep step in this.steps)
+            {
+                cookTime += step.Time;
+            }
+
+            return cookTime;
+        }
     }
 }
