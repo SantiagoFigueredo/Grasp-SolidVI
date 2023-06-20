@@ -75,5 +75,29 @@ namespace Full_GRASP_And_SOLID
 
             return cookTime;
         }
+
+        public bool Cooked { get; private set; } = false;
+
+        public void Cook()
+        {
+            CountdownTimer timer = new CountdownTimer();
+            timer.Register(GetCookTime(), new CookTimerClient(this));
+        }
+
+        private class CookTimerClient : TimerClient
+        {
+            private Recipe recipe;
+
+            public CookTimerClient(Recipe recipe)
+            {
+                this.recipe = recipe;
+            }
+
+            public void TimeOut()
+            {
+                recipe.Cooked = true;
+            }
+        }
     }
 }
+

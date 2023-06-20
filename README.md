@@ -1,3 +1,15 @@
+️➡️ **Que patrón(es) o principio(s) has usado para esto?**
+* Principio de Responsabilidad Unica (SRP): La clase Recipe tiene una unica responsabilidad, que es representar una receta y aplicar metodos relacionados a las recetas.
+
+* Principio de Abierto/Cerrado (OCP): La clase se puede extender para agregar cosas sin tener que modificar el codigo. Se agrego una clase base abstracta BaseStep y se crearon clases derivadas para representar tipos de pasos.
+
+* Principio de Inversion de Dependencia (DIP): Este principio se aplica al depender de abstacciones en lugar de implementarlas directamente. Las clases dependen de interfaces como IRecipeContent en lugar de una clase en especifica.
+
+* Principio de Segregacion de Interfaces (ISP): La interfaz IRecipeContent tiene solo un metodo necesario para imprimir la receta, evitando que se tenga que implementar innecesariamente en las clases.
+
+
+
+
 # PII Full GRASP and SOLID
 ## FIT
 ### Universidad Católica del Uruguay
